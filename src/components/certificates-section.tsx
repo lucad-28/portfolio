@@ -24,13 +24,13 @@ export function CertificatesSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Certificados
-            </span>
-            {" "}Académicos
+            </span>{" "}
+            Académicos
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Certificados obtenidos en cursos y programas de formación
-            profesional en analisis/ciencia de datos, gestión de proyectos 
-            y cloud.
+            profesional en analisis/ciencia de datos, gestión de proyectos y
+            cloud.
           </p>
         </motion.div>
 
@@ -60,12 +60,16 @@ export function CertificatesSection() {
 
               <div className="flex items-center text-gray-400 text-sm mb-4">
                 <Calendar className="w-4 h-4 mr-2" />
-                <span>Awarded {certificate.date}</span>
+                <span>{certificate.date}</span>
               </div>
 
-              <p className="text-gray-300 text-sm mb-4 line-clamp-3">
-                {certificate.description}
-              </p>
+              <div className="mb-4">
+                <img
+                  src={certificate.image || "/placeholder.svg"}
+                  alt={certificate.title}
+                  className="w-full h-28 md:h-32 object-cover rounded-2xl"
+                />
+              </div>
 
               <div className="flex flex-wrap gap-1 mb-4">
                 {certificate.skills.slice(0, 3).map((skill) => (
@@ -85,7 +89,7 @@ export function CertificatesSection() {
 
               <div className="flex items-center text-blue-400 text-sm font-medium">
                 <BookOpen className="w-4 h-4 mr-2" />
-                <span>View Certificate</span>
+                <span>Ver Certificado</span>
               </div>
             </motion.div>
           ))}

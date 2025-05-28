@@ -6,6 +6,7 @@ export interface Certificate {
     image: string;
     description: string;
     skills: string[];
-    credentialId: string;
-    validUntil: string;
+    credentialId?: string;
+    validUntil?: string;
+    certificateUrl: string;
 }

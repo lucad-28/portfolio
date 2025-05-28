@@ -1,29 +1,22 @@
-"use client"
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion"
-import { X, Award, Calendar, ExternalLink, Shield, Clock } from "lucide-react"
-import { Button } from "@/components/ui/button"
-
-interface Certificate {
-  id: string
-  title: string
-  issuer: string
-  date: string
-  image: string
-  description: string
-  skills: string[]
-  credentialId: string
-  validUntil: string
-}
+import { motion, AnimatePresence } from "framer-motion";
+import { X, Award, Calendar, ExternalLink, Shield, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Certificate } from "@/types/certificate";
 
 interface CertificateModalProps {
-  certificate: Certificate | null
-  isOpen: boolean
-  onClose: () => void
+  certificate: Certificate | null;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-export function CertificateModal({ certificate, isOpen, onClose }: CertificateModalProps) {
-  if (!certificate) return null
+export function CertificateModal({
+  certificate,
+  isOpen,
+  onClose,
+}: CertificateModalProps) {
+  if (!certificate) return null;
 
   return (
     <AnimatePresence>
@@ -53,11 +46,18 @@ export function CertificateModal({ certificate, isOpen, onClose }: CertificateMo
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-white">{certificate.title}</h2>
+                  <h2 className="text-xl font-bold text-white">
+                    {certificate.title}
+                  </h2>
                   <p className="text-blue-400">{certificate.issuer}</p>
                 </div>
               </div>
-              <Button variant="ghost" size="sm" onClick={onClose} className="text-gray-400 hover:text-white">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={onClose}
+                className="text-gray-400 hover:text-white"
+              >
                 <X className="w-5 h-5" />
               </Button>
             </div>
@@ -77,26 +77,34 @@ export function CertificateModal({ certificate, isOpen, onClose }: CertificateMo
 
                   {/* Certificate Details */}
                   <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-                    <h3 className="text-lg font-semibold text-white mb-4">Certificate Details</h3>
+                    <h3 className="text-lg font-semibold text-white mb-4">
+                      Detalles del Certificado
+                    </h3>
                     <div className="space-y-3">
                       <div className="flex items-center text-gray-300">
                         <Calendar className="w-4 h-4 mr-3 text-blue-400" />
                         <span className="text-sm">
-                          <strong>Awarded:</strong> {certificate.date}
+                          <strong>Fecha de entrega:</strong> {certificate.date}
                         </span>
                       </div>
-                      <div className="flex items-center text-gray-300">
-                        <Shield className="w-4 h-4 mr-3 text-green-400" />
-                        <span className="text-sm">
-                          <strong>Credential ID:</strong> {certificate.credentialId}
-                        </span>
-                      </div>
-                      <div className="flex items-center text-gray-300">
-                        <Clock className="w-4 h-4 mr-3 text-purple-400" />
-                        <span className="text-sm">
-                          <strong>Valid Until:</strong> {certificate.validUntil}
-                        </span>
-                      </div>
+                      {certificate.credentialId && (
+                        <div className="flex items-center text-gray-300">
+                          <Shield className="w-4 h-4 mr-3 text-green-400" />
+                          <span className="text-sm">
+                            <strong>ID de certificado:</strong>{" "}
+                            {certificate.credentialId}
+                          </span>
+                        </div>
+                      )}
+                      {certificate.validUntil && (
+                        <div className="flex items-center text-gray-300">
+                          <Clock className="w-4 h-4 mr-3 text-purple-400" />
+                          <span className="text-sm">
+                            <strong>Valido hasta:</strong>{" "}
+                            {certificate.validUntil}
+                          </span>
+                        </div>
+                      )}
                     </div>
 
                     <Button className="w-full mt-4 bg-blue-600 hover:bg-blue-700">
@@ -110,13 +118,19 @@ export function CertificateModal({ certificate, isOpen, onClose }: CertificateMo
                 <div className="space-y-6">
                   {/* Description */}
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-3">About This Certification</h3>
-                    <p className="text-gray-300 leading-relaxed">{certificate.description}</p>
+                    <h3 className="text-lg font-semibold text-white mb-3">
+                      Sobre este Certificado
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      {certificate.description}
+                    </p>
                   </div>
 
                   {/* Skills */}
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-4">Skills Demonstrated</h3>
+                    <h3 className="text-lg font-semibold text-white mb-4">
+                      Habilidades demostradas
+                    </h3>
                     <div className="grid grid-cols-2 gap-3">
                       {certificate.skills.map((skill, index) => (
                         <motion.div
@@ -135,20 +149,30 @@ export function CertificateModal({ certificate, isOpen, onClose }: CertificateMo
 
                   {/* Achievement Stats */}
                   <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-xl p-6 border border-blue-800/30">
-                    <h3 className="text-lg font-semibold text-white mb-4">Achievement Highlights</h3>
+                    <h3 className="text-lg font-semibold text-white mb-4">
+                      Estadísticas del Logro
+                    </h3>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-blue-400 mb-1">{certificate.skills.length}</div>
-                        <div className="text-gray-400 text-sm">Skills Validated</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-purple-400 mb-1">
-                          {certificate.validUntil === "Lifetime" ? "∞" : "3"}
+                        <div className="text-2xl font-bold text-blue-400 mb-1">
+                          {certificate.skills.length}
                         </div>
                         <div className="text-gray-400 text-sm">
-                          {certificate.validUntil === "Lifetime" ? "Lifetime Valid" : "Years Valid"}
+                          Habilidades adquiridas
                         </div>
                       </div>
+                      {certificate.validUntil && (
+                        <div className="text-center">
+                          <div className="text-2xl font-bold text-purple-400 mb-1">
+                            {certificate.validUntil === "Lifetime" ? "∞" : "3"}
+                          </div>
+                          <div className="text-gray-400 text-sm">
+                            {certificate.validUntil === "Lifetime"
+                              ? "Valido de por vida"
+                              : "años de validez"}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -158,5 +182,5 @@ export function CertificateModal({ certificate, isOpen, onClose }: CertificateMo
         </div>
       )}
     </AnimatePresence>
-  )
+  );
 }
