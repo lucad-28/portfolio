@@ -1,20 +1,24 @@
-import { ProjectDetail } from "@/components/project-detail"
-import { notFound } from "next/navigation"
-import { PROJECTS} from "@/types/mockup"
+import { ProjectDetail } from "@/components/project-detail";
+import { notFound } from "next/navigation";
+import { PROJECTS } from "@/types/mockup";
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
   const project = PROJECTS[slug as keyof typeof PROJECTS];
 
   if (!project) {
-    notFound()
+    notFound();
   }
 
-  return <ProjectDetail project={project} />
+  return <ProjectDetail project={project} />;
 }
 
 export function generateStaticParams() {
   return Object.keys(PROJECTS).map((slug) => ({
     slug,
-  }))
+  }));
 }
