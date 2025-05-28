@@ -199,24 +199,42 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               <div className="space-y-3">
                 {project.demoUrl !== "" && (
                   <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Demo
+                    <Link
+                      href={project.demoUrl}
+                      target="_blank"
+                      className="flex items-center"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Ver Demo
+                    </Link>
                   </Button>
                 )}
                 <Button
                   variant="outline"
                   className="w-full border-gray-600 text-gray-300 hover:bg-gray-800"
                 >
-                  <Github className="w-4 h-4 mr-2" />
-                  Código fuente
+                  <Link
+                    href={project.githubUrl}
+                    target="_blank"
+                    className="flex items-center"
+                  >
+                    <Github className="w-4 h-4 mr-2" />
+                    Código fuente
+                  </Link>
                 </Button>
                 {project.frontendGithubUrl && (
                   <Button
                     variant="outline"
                     className="w-full border-gray-600 text-gray-300 hover:bg-gray-800"
                   >
-                    <Github className="w-4 h-4 mr-2" />
-                    Frontend Código fuente
+                    <Link
+                      href={project.frontendGithubUrl}
+                      target="_blank"
+                      className="flex items-center"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Frontend Código fuente
+                    </Link>
                   </Button>
                 )}
               </div>

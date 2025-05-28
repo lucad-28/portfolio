@@ -148,7 +148,7 @@ export function CertificateModal({
                   </div>
 
                   {/* Achievement Stats */}
-                  <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-xl p-6 border border-blue-800/30">
+                  <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-xl p-6 border border-blue-800/30 mb-4">
                     <h3 className="text-lg font-semibold text-white mb-4">
                       Estadísticas del Logro
                     </h3>

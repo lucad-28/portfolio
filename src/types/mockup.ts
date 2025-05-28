@@ -129,36 +129,6 @@ export const PROJECTS: Record<string, Project> = {
     githubUrl: "https://github.com/lucad-28/etlas-b",
     frontendGithubUrl: "https://github.com/lucad-28/etlas-f",
   },
-  "ab-testing-framework": {
-    title: "A/B Testing Framework",
-    description:
-      "Developed a statistical framework for A/B testing with automated significance testing and power analysis.",
-    fullDescription:
-      "Created a comprehensive A/B testing framework that automates the entire experimentation process from power analysis to result interpretation, ensuring statistical rigor and business relevance.",
-    technologies: ["Python", "Scipy", "Statsmodels", "Matplotlib", "Streamlit"],
-    image: "/placeholder.svg?height=400&width=800",
-    category: "Experimentation",
-    duration: "2 months",
-    team: "Solo project",
-    challenges: [
-      "Multiple testing correction",
-      "Sequential testing capabilities",
-      "User-friendly interface for non-statisticians",
-    ],
-    solutions: [
-      "Implemented Benjamini-Hochberg procedure",
-      "Added sequential probability ratio tests",
-      "Built Streamlit web interface",
-    ],
-    results: [
-      "Reduced experiment analysis time by 70%",
-      "Standardized testing across organization",
-      "Prevented 5+ false positive decisions",
-    ],
-    demoUrl: "#",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    githubUrl: "#",
-  },
 };
 
 export const CERTIFICATES: Certificate[] = [

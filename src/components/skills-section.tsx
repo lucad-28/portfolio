@@ -68,9 +68,9 @@ export function SkillsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Skills &{" "}
+            Habilidades &{" "}
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Expertise
+              Dominio
             </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">

@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { Github } from "@/components/ui/github";
 import Link from "next/link";
 import { PROJECTS } from "@/types/mockup";
 
@@ -74,17 +75,23 @@ export function ProjectsSection() {
 
                 <div className="flex space-x-3">
                   <Link href={`/projects/${key}`}>
-                    <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                    <Button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer">
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      View Details
+                      Conoce más
                     </Button>
                   </Link>
                   <Button
                     variant="outline"
                     className="border-gray-600 text-gray-300 hover:bg-gray-700"
                   >
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
+                    <Link
+                      href={project.githubUrl}
+                      target="_blank"
+                      className="flex items-center"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Código
+                    </Link>
                   </Button>
                 </div>
               </div>

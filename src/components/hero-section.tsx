@@ -5,6 +5,12 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { Github } from "@/components/ui/github";
 import { Linkedin } from "@/components/ui/linkedin";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+const profile = {
+  github: "https://github.com/lucad-28",
+  linkedin: "https://www.linkedin.com/in/aldair-rivera-3b83731a6/",
+};
 
 export function HeroSection() {
   return (
@@ -36,7 +42,9 @@ export function HeroSection() {
               <h2 className="text-2xl md:text-3xl text-gray-300">
                 Estudiante de Ingeniería de Sistemas
               </h2>
-              <span className="text-blue-400 text-xl font-light md:text-2xl">|</span>
+              <span className="text-blue-400 text-xl font-light md:text-2xl">
+                |
+              </span>
               <h2 className="text-xl font-extralight md:text-2xl text-gray-300">
                 7° Ciclo
               </h2>
@@ -46,12 +54,9 @@ export function HeroSection() {
             </h3>
           </div>
 
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Apasionado por la ciencia, analisis de datos y su transformación en
-            en insights valiosos. Con sólidos fundamentos en análisis
-            estadístico, machine learning, automatización, visualización de
-            datos, busco aplicar mis conocimientos académicos y proyectos
-            prácticos para contribuir a la toma de decisiones basada en datos.
+          <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Apasionado por la ciencia/analisis de datos y su transformación en
+            en insights valiosos.
           </p>
         </motion.div>
 
@@ -86,16 +91,28 @@ export function HeroSection() {
             size="lg"
             className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
           >
-            <Github className="w-5 h-5 mr-2" />
-            GitHub
+            <Link
+              href={profile.github}
+              target="_blank"
+              className="flex items-center"
+            >
+              <Github className="w-5 h-5 mr-2" />
+              GitHub
+            </Link>
           </Button>
           <Button
             variant="outline"
             size="lg"
             className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white"
           >
-            <Linkedin className="w-2 h-2 mr-2" />
-            LinkedIn
+            <Link
+              href={profile.linkedin}
+              target="_blank"
+              className="flex items-center"
+            >
+              <Linkedin className="w-2 h-2 mr-2" />
+              LinkedIn
+            </Link>
           </Button>
         </motion.div>
       </div>
