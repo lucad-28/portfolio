@@ -21,13 +21,14 @@ export function CertificateModal({
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            dragPropagation={false}
             onClick={onClose}
           />
 
@@ -37,7 +38,8 @@ export function CertificateModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="relative bg-gray-900 rounded-2xl border border-gray-700 max-w-4xl w-full max-h-[90vh] overflow-hidden"
+            className="relative bg-gray-900 rounded-2xl border border-gray-700 max-w-4xl w-full max-h-[85vh] overflow-hidden"
+            dragPropagation={false}
           >
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-700">
@@ -107,10 +109,19 @@ export function CertificateModal({
                       )}
                     </div>
 
-                    <Button className="w-full mt-4 bg-blue-600 hover:bg-blue-700">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Verify Certificate
-                    </Button>
+                    {certificate.certificateUrl &&
+                      certificate.certificateUrl !== "" && (
+                        <a
+                          href={certificate.certificateUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button className="w-full mt-4 bg-blue-600 hover:bg-blue-700 cursor-pointer">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Verificar Certificado
+                          </Button>
+                        </a>
+                      )}
                   </div>
                 </div>
 
@@ -148,16 +159,13 @@ export function CertificateModal({
                   </div>
 
                   {/* Achievement Stats */}
-                  <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-xl p-6 border border-blue-800/30 mb-4">
-                    <h3 className="text-lg font-semibold text-white mb-4">
-                      Estadísticas del Logro
-                    </h3>
+                  <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-xl p-6 border border-blue-800/30 mb-20 sm:mb-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-blue-400 mb-1">
                           {certificate.skills.length}
                         </div>
-                        <div className="text-gray-400 text-sm">
+                        <div className="text-gray-200 text-sm">
                           Habilidades adquiridas
                         </div>
                       </div>
@@ -166,7 +174,7 @@ export function CertificateModal({
                           <div className="text-2xl font-bold text-purple-400 mb-1">
                             {certificate.validUntil === "Lifetime" ? "∞" : "3"}
                           </div>
-                          <div className="text-gray-400 text-sm">
+                          <div className="text-gray-200 text-sm">
                             {certificate.validUntil === "Lifetime"
                               ? "Valido de por vida"
                               : "años de validez"}

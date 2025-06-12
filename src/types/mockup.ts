@@ -40,6 +40,43 @@ export const PROJECTS: Record<string, Project> = {
       "https://github.com/user-attachments/assets/c7049885-d591-4a51-aa2f-79f5ee34d362",
     githubUrl: "https://github.com/lucad-28/soh",
   },
+  "extintor-sys": {
+    title: "Sistema de Registro de Ventas de Extintores en Excel",
+    description:
+      "Automatización en Excel con interfaz VBA para registrar, validar y gestionar ventas de extintores con múltiples capacidades.",
+    fullDescription:
+      "Desarrollé un sistema automatizado en Excel con VBA para el registro y control de ventas de extintores. Incluye una interfaz intuitiva con validación de campos, listas dinámicas y gestión de múltiples productos por venta. Los registros se almacenan en hojas específicas y pueden ser editados o eliminados desde un panel interactivo. El sistema permite mantener control detallado de cada venta individual y de los productos vendidos, mejorando la trazabilidad y el orden operativo.",
+    technologies: [
+      "Excel VBA",
+      "Macros",
+      "Formularios Dinámicos",
+      "Validación de Datos",
+      "Automatización con VBA",
+    ],
+    image: "/thumbnails/extintor-sys.png",
+    category: "Process Automation",
+    duration: "1 mes",
+    team: "Proyecto Individual",
+    challenges: [
+      "Ventas con múltiples productos distintos",
+      "Validación y control de formatos de campos",
+      "Gestión de datos separados por hoja",
+    ],
+    solutions: [
+      "Formulario VBA con validación de entradas",
+      "Botones dinámicos para agregar/eliminar extintores",
+      "Separación lógica de hojas de ventas y productos",
+    ],
+    results: [
+      "Automatización completa del flujo de venta",
+      "Reducción de errores manuales",
+      "Mayor trazabilidad y control operativo",
+    ],
+    demoUrl: "",
+    videoUrl:
+      "https://github.com/user-attachments/assets/043803b1-0041-432e-9f98-0c25cb18fc5a",
+    githubUrl: "https://github.com/lucad-28/extintores-crud",
+  },
   tractchun: {
     title: "Dashboard de Seguimiento de Ventas de Tickets",
     description:
@@ -151,7 +188,7 @@ export const CERTIFICATES: Certificate[] = [
     ],
     validUntil: "Lifetime",
     certificateUrl:
-      "https://media.licdn.com/dms/document/media/v2/D4E2DAQExJZl7M8rkFQ/profile-treasury-document-pdf-analyzed/B4EZWx.AGuH0Ac-/0/1742447585422?e=1749081600&v=beta&t=lb0aCLgWw-tvwbBD47KsPiIadU_-yTaRTT0LAzQDwvY",
+      "https://drive.google.com/file/d/1f45q0WwW9fiJbSFbPB8QoAUU0B_lK9Ni/view?usp=drive_link",
   },
   {
     id: "excel-data-analysis",
@@ -169,7 +206,7 @@ export const CERTIFICATES: Certificate[] = [
     credentialId: "017-0001074",
     validUntil: "Lifetime",
     certificateUrl:
-      "https://media.licdn.com/dms/document/media/v2/D4E2DAQEXR7Z3p7xo1A/profile-treasury-document-pdf-analyzed/B4EZWvah3nHgAg-/0/1742404725909?e=1749081600&v=beta&t=1ux7wx3ScsEoxAZGiBW4NABiuUr7Kh8bssXGhCI8qXM",
+      "https://drive.google.com/file/d/1Zxv7vtGRC_KNCvRAMPY5G6GT_9QTe3tg/view?usp=drive_link",
   },
   {
     id: "ibm-ai-data-analyst",
@@ -191,7 +228,7 @@ export const CERTIFICATES: Certificate[] = [
     ],
     validUntil: "Lifetime",
     certificateUrl:
-      "https://media.licdn.com/dms/document/media/v2/D4E2DAQGJPfRmUqdvRA/profile-treasury-document-pdf-analyzed/B4EZcV2BBgHQAo-/0/1748418172932?e=1749081600&v=beta&t=9Cs-yi90sn2HMAx6w4yVSSBZGBdyYPuZTJZMsQg3zwI",
+      "https://drive.google.com/file/d/1NSKtuLNH4HVBgxFkP_RrU7GsYvVLHpnh/view?usp=drive_link",
   },
   {
     id: "ibm-agile-explorer",
@@ -229,7 +266,7 @@ export const CERTIFICATES: Certificate[] = [
     ],
     image: "/thumbnails/ciencia-datos-big-data.png",
     certificateUrl:
-      "https://media.licdn.com/dms/document/media/v2/D4E2DAQHMoepPRrxAFw/profile-treasury-document-pdf-analyzed/B4EZcV2rxrHIAk-/0/1748418349708?e=1749081600&v=beta&t=4dWaALA9WiNpPydm8uLLf8dlPBNE-4Wcpjh0HWEFKNI",
+      "https://drive.google.com/file/d/1vjEImNrUAoO8Lh8f2yjNH4-oAjTQ3HuS/view?usp=drive_link",
     date: "Agosto 2024",
     validUntil: "Lifetime",
     credentialId: "016-0014361",
@@ -254,7 +291,7 @@ export const CERTIFICATES: Certificate[] = [
     ],
     image: "/thumbnails/cloud-computing-aws-azure-google.png",
     certificateUrl:
-      "https://media.licdn.com/dms/document/media/v2/D4E2DAQGjj9AEHvHpDw/profile-treasury-document-pdf-analyzed/B4EZcV21SZHIAc-/0/1748418389269?e=1749081600&v=beta&t=XVnCZpPgjh8Fq6NFzr5XLTu4aWaDn5Ew0UluJnR2qOQ",
+      "https://drive.google.com/file/d/1Zc7JYfIzeHOQdWaAsKaIdafs-ItSKKQJ/view?usp=drive_link",
     date: "Agosto 2024",
     validUntil: "Lifetime",
     credentialId: "016-0014780",

@@ -82,11 +82,10 @@ export function CertificatesSection() {
                 ))}
                 {certificate.skills.length > 3 && (
                   <span className="px-2 py-1 bg-gray-700 text-gray-400 rounded text-xs">
-                    +{certificate.skills.length - 3} more
+                    +{certificate.skills.length - 3} más
                   </span>
                 )}
               </div>
-
               <div className="flex items-center text-blue-400 text-sm font-medium">
                 <BookOpen className="w-4 h-4 mr-2" />
                 <span>Ver Certificado</span>
